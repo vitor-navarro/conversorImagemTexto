@@ -3,33 +3,46 @@ body{
 }
 
 .App {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-  }
-  
-  .div1, .div2 {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    width: 50%;
-    height: 100%;
-  }
-  
-  .fixed-size {
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
-  }
-  
-  .divTeste{
-    width: 50vh;
-    height: 50vh;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  height: 70vh;
 }
   
+.div1, .div2, .div3 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 70vw;
+  height: 100%;
+}
+
+.div2 {
+  width: 5%;
+  justify-content: space-evenly;
+}
   
+.div2 button{
+  font-size: 20px;
+}
+
+.fixed-size {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
   
+.div-url{
+  width: 50vh;
+  height: 50vh;
+}
+
+div textarea{
+  width: 50%;
+  height: 50%;
+  background-color: #242424;
+  font-size: 20px;
   
+}

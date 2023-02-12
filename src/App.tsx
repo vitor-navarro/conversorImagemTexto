@@ -1,3 +1,4 @@
+import { BsArrowRight } from 'react-icons/bs'
 import { useState, useEffect } from 'react'
 import './App.css'
 import './styles.css'
@@ -12,19 +13,31 @@ function App() {
     }
   }
 
+  function convertToText(){
+    console.log('convertToText')
+  }
+
   return (
     <div className="App">
-    <div className='div1'>
-      <input type="file" onChange={onImageChange} />
-      <br></br>
-      <div className='divTeste'>{url && (
-        <img className="fixed-size" src={url} alt="image" />
-      )}</div>
-    </div>
+      <div className='div1'>
+        <input type="file" onChange={onImageChange} />
+        <br></br>
+        <div className='div-url'>{url && (
+          <img className="fixed-size" src={url} alt="image" />
+        )}</div>
+      </div>
+      <div className='div2'>
 
-    <div className='div2'>
-      <textarea></textarea>
-    </div>
+        <BsArrowRight size = '50'/>
+
+        <button type='submit' onClick={event =>convertToText()}>Converter</button>
+
+      </div>
+
+
+      <div className='div3'>
+        <textarea></textarea>
+      </div>
   </div>
   )
 }
