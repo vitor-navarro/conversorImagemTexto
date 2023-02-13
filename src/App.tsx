@@ -23,7 +23,6 @@ function App() {
       return;
     }
 
-    settextConverted('')
     Tesseract.recognize(
       url,
       'por',
