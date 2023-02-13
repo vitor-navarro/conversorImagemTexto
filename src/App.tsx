@@ -7,7 +7,7 @@ import './styles.css'
 
 function App() {
   const [url, setUrl] = useState('')
-
+  const [textConverted, settextConverted] = useState('')
 
 
   function onImageChange(e: any) {
@@ -24,10 +24,9 @@ function App() {
     }
     Tesseract.recognize(
       url,
-      'eng',
-      { logger: m => console.log(m) }
+      'por',
     ).then(({ data: { text } }) => {
-      console.log(text);
+      settextConverted(text);
     })
   }
 
@@ -44,13 +43,13 @@ function App() {
 
         <BsArrowRight size = '50'/>
 
-        <button type='submit' onClick={event =>convertToText()}>Converter</button>
+        <button type='submit' onClick={event => convertToText()}>Converter</button>
 
       </div>
 
 
       <div className='div3'>
-        <textarea></textarea>
+        <textarea value={textConverted}></textarea>
       </div>
   </div>
   )
