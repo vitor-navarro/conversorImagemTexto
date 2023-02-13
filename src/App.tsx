@@ -1,10 +1,14 @@
 import { BsArrowRight } from 'react-icons/bs'
 import { useState, useEffect } from 'react'
+import Tesseract from 'tesseract.js';
 import './App.css'
 import './styles.css'
 
+
 function App() {
   const [url, setUrl] = useState('')
+
+
 
   function onImageChange(e: any) {
     if (e.target.files && e.target.files[0]) {
@@ -14,7 +18,13 @@ function App() {
   }
 
   function convertToText(){
-    console.log('convertToText')
+    Tesseract.recognize(
+      './src/imagem_aleatoria.png',
+      'eng',
+      { logger: m => console.log(m) }
+    ).then(({ data: { text } }) => {
+      console.log(text);
+    })
   }
 
   return (
