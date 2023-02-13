@@ -18,8 +18,12 @@ function App() {
   }
 
   function convertToText(){
+
+    if(!url){
+      return;
+    }
     Tesseract.recognize(
-      './src/imagem_aleatoria.png',
+      url,
       'eng',
       { logger: m => console.log(m) }
     ).then(({ data: { text } }) => {
