@@ -17,6 +17,18 @@ function App() {
     }
   }
 
+  function getLanguage(){
+    const languageMap: { [key:string]: string} = {
+      "pt-BR": "por",
+      "fr-FR": "fra",
+      "es-ES": "spa",
+    };
+
+    const browserLanguage = navigator.language;
+    const tesseractLanguage = languageMap[browserLanguage] || "eng";
+    return tesseractLanguage
+  }
+
   function convertToText(){
 
     if(!url){
@@ -25,7 +37,7 @@ function App() {
 
     Tesseract.recognize(
       url,
-      'por',
+      getLanguage(),
     ).then(({ data: { text } }) => {
       settextConverted(text);
     })
@@ -37,7 +49,7 @@ function App() {
         <input type="file" onChange={onImageChange} />
         <br></br>
         <div className='div-url'>{url && (
-          <img className="fixed-size" src={url} alt="image" />
+          <img className="fixed-size-img" src={url} alt="image" />
         )}</div>
       </div>
       <div className='div2'>
@@ -50,6 +62,7 @@ function App() {
 
 
       <div className='div3'>
+        <label className='label-titulo'>Texto:</label>
         <textarea value={textConverted}></textarea>
       </div>
   </div>

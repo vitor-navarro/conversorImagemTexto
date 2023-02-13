@@ -29,7 +29,7 @@ body{
 }
 
 
-.fixed-size {
+.fixed-size-img {
   width: 100%;
   height: 100%;
   object-fit: contain;
@@ -38,9 +38,16 @@ body{
 .div-url{
   width: 50vh;
   height: 50vh;
+  border: solid 1px whitesmoke;
+}
+
+.label-titulo{
+  font-size: 20px;
 }
 
 div textarea{
+  border: solid 1px whitesmoke;
+  border-radius: 5px;
   width: 80%;
   height: 70%;
   background-color: #242424;
