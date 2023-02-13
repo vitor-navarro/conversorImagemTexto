@@ -1,0 +1,49 @@
+import { ArrowRight } from "phosphor-react";
+import styled from "styled-components";
+
+export const Container = styled.div`
+  display: flex;
+  gap: 32px;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+
+  width: 100%;
+`
+
+export const Quadrado = styled.div`
+  width: 400px;
+  height: 400px;
+
+  background: #131313;
+`
+
+export const ActionWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+
+  align-items: center;
+  justify-content: center;
+
+  button {
+    border: 0;
+    background: #131313;
+    color: #fff;
+
+    padding: 8px 16px;
+
+    border-radius: 6px;
+
+    cursor: pointer;
+  }
+`
+
+export const Seta = styled(ArrowRight).attrs(() => ({
+  color: '#131313',
+  size: 64
+}))`
+  @media(max-width: 768px) {
+    transform: rotate(90deg);
+  }
+`
