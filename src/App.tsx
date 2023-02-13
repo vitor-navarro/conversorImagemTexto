@@ -22,6 +22,8 @@ function App() {
     if(!url){
       return;
     }
+
+    settextConverted('')
     Tesseract.recognize(
       url,
       'por',
