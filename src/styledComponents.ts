@@ -11,8 +11,8 @@ export const Container = styled.div`
 `
 
 export const Quadrado = styled.div`
-  width: 400px;
-  height: 400px;
+  width: 70vw;
+  height: 100vw;
   display: flex;
   justify-content: center;
   align-items: center;

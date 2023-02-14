@@ -120,28 +120,28 @@ function App() {
   }
 
   return (
-    <Container>
-      <Quadrado>
+    <div className='app'>
+      <div className='div1'>
         <input type="file" accept="image/*" onChange={onImageChange} />
         <br></br>
         <div className='div-url'>{url && (
           <img className="fixed-size-img" src={url} alt="image" />
         )}</div>
-      </Quadrado>
-      <ActionWrapper className='div2'>
+      </div>
+      
+      <div className='div2'>
 
-        <Seta></Seta>
 
         <button type='submit' onClick={event => convertToText()}>Converter</button>
 
-      </ActionWrapper>
+      </div>
 
 
-      <Quadrado>
+      <div className='div3'>
         <label className='label-titulo'>Texto:</label>
         <textarea value={textConverted}></textarea>
-      </Quadrado>
-    </Container>
+        </div>
+    </div>
   )
 }
 
