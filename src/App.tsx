@@ -122,7 +122,7 @@ function App() {
   return (
     <Container>
       <Quadrado>
-        <input type="file" onChange={onImageChange} />
+        <input type="file" accept="image/*" onChange={onImageChange} />
         <br></br>
         <div className='div-url'>{url && (
           <img className="fixed-size-img" src={url} alt="image" />
