@@ -3,7 +3,7 @@ import { useState, useEffect } from 'react'
 import Tesseract from 'tesseract.js';
 import './App.css'
 import './styles.css'
-import { Container, Quadrado, ActionWrapper } from './styledComponents';
+import { Container, Quadrado, ActionWrapper, Seta } from './styledComponents';
 
 
 function App() {
@@ -18,8 +18,8 @@ function App() {
     }
   }
 
-  function getLanguage(){
-    const languageMap: { [key:string]: string} = {
+  function getLanguage() {
+    const languageMap: { [key: string]: string } = {
       "pt-BR": "por",
       "af-ZA": "afr",
       "am-ET": "amh",
@@ -105,9 +105,9 @@ function App() {
     return tesseractLanguage
   }
 
-  function convertToText(){
+  function convertToText() {
 
-    if(!url){
+    if (!url) {
       return;
     }
 
@@ -120,28 +120,28 @@ function App() {
   }
 
   return (
-    <div className="App">
-      <div className='div1'>
+    <Container>
+      <Quadrado>
         <input type="file" onChange={onImageChange} />
         <br></br>
         <div className='div-url'>{url && (
           <img className="fixed-size-img" src={url} alt="image" />
         )}</div>
-      </div>
-      <div className='div2'>
+      </Quadrado>
+      <ActionWrapper className='div2'>
 
-        <BsArrowRight size = '50'/>
+        <Seta></Seta>
 
         <button type='submit' onClick={event => convertToText()}>Converter</button>
 
-      </div>
+      </ActionWrapper>
 
 
-      <div className='div3'>
+      <Quadrado>
         <label className='label-titulo'>Texto:</label>
         <textarea value={textConverted}></textarea>
-      </div>
-  </div>
+      </Quadrado>
+    </Container>
   )
 }
 

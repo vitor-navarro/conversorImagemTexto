@@ -7,15 +7,16 @@ export const Container = styled.div`
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
-
   width: 100%;
 `
 
 export const Quadrado = styled.div`
   width: 400px;
   height: 400px;
-
-  background: #131313;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 `
 
 export const ActionWrapper = styled.div`
@@ -28,19 +29,13 @@ export const ActionWrapper = styled.div`
 
   button {
     border: 0;
-    background: #131313;
-    color: #fff;
-
     padding: 8px 16px;
-
     border-radius: 6px;
-
     cursor: pointer;
   }
 `
 
 export const Seta = styled(ArrowRight).attrs(() => ({
-  color: '#131313',
   size: 64
 }))`
   @media(max-width: 768px) {
