@@ -120,29 +120,25 @@ function App() {
   }
 
   return (
-    <div className='app'>
-      <div className='div1'>
-        <input type="file" accept="image/*" onChange={onImageChange} />
-        <br></br>
-        <div className='div-url'>{url && (
-          <img className="fixed-size-img" src={url} alt="image" />
-        )}</div>
-      </div>
-      
-      <div className='div2'>
-
-
-        <button type='submit' onClick={event => convertToText()}>Converter</button>
-
-      </div>
-
-
-      <div className='div3'>
-        <label className='label-titulo'>Texto:</label>
-        <textarea value={textConverted}></textarea>
-        </div>
+    <div className="App">
+    <div className='div1'>
+      <input type="file" onChange={onImageChange} />
+      <br></br>
+      <div className='div-url'>{url && (
+        <img className="fixed-size-img" src={url} alt="image" />
+      )}</div>
     </div>
-  )
-}
+    <div className='div2'>
+      <BsArrowRight size = '50'/>
+      <button type='submit' onClick={event => convertToText()}>Converter</button>
+    </div>
+
+
+    <div className='div3'>
+      <label className='label-titulo'>Texto:</label>
+      <textarea value={textConverted}></textarea>
+    </div>
+</div>
+)}
 
 export default App
