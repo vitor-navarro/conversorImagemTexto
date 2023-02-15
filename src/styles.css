@@ -50,3 +50,21 @@ div textarea{
   color: whitesmoke;
   padding: 10px 5px;
 }
+
+
+@media (max-width:1180px){
+  .div1{
+    width: 40vw;
+  }
+  .div2{
+    width: 15vw;
+  }
+  .div3{
+    width: 40vw;
+  }
+
+  .div-url{
+    width: 40vw;
+    height: 40vh;
+  }
+}
