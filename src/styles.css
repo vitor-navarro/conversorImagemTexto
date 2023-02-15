@@ -51,6 +51,14 @@ div textarea{
   padding: 10px 5px;
 }
 
+.arrow-right {
+  display: block;
+}
+
+.arrow-down {
+  display: none;
+}
+
 
 @media (max-width:1180px){
   .div1{
@@ -66,5 +74,39 @@ div textarea{
   .div-url{
     width: 40vw;
     height: 40vh;
+  }
+}
+
+@media (max-width:768px){
+  .App{
+    flex-direction: column;
+    height: auto;
+  }
+  .div1,.div2,.div3{
+    height: auto;
+    width: auto;
+  }
+
+  .div2{
+    margin: 20px;
+  }
+
+  div textarea{
+    height: 300px;
+    width: 100%;
+    padding: 10px 5px;
+  }
+
+  .arrow-right {
+    display: none;
+  }
+
+  .arrow-down {
+    display: block;
+    cursor: pointer;
+  }
+
+  .button-convert{
+    display: none;
   }
 }

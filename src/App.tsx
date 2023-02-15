@@ -1,4 +1,4 @@
-import { BsArrowRight } from 'react-icons/bs'
+import { BsArrowRight,BsFillArrowDownSquareFill } from 'react-icons/bs'
 import { useState, useEffect } from 'react'
 import Tesseract from 'tesseract.js';
 import './App.css'
@@ -129,8 +129,9 @@ function App() {
       )}</div>
     </div>
     <div className='div2'>
-      <BsArrowRight size = '50'/>
-      <button type='submit' onClick={event => convertToText()}>Converter</button>
+      <BsArrowRight size='50' className='arrow arrow-right' />
+      <BsFillArrowDownSquareFill size='50' className='arrow arrow-down' onClick={event => convertToText()} />
+      <button type='submit' className="button-convert" onClick={event => convertToText()}>Converter</button>
     </div>
 
 
