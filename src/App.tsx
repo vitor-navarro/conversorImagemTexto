@@ -1,4 +1,5 @@
-import { BsArrowRight,BsFillArrowDownSquareFill } from 'react-icons/bs'
+import { BsArrowRight, BsFillArrowDownSquareFill } from 'react-icons/bs'
+import { AiOutlineLoading } from 'react-icons/ai'
 import { useState, useEffect } from 'react'
 import Tesseract from 'tesseract.js';
 import './App.css'
@@ -8,8 +9,8 @@ import { Container, Quadrado, ActionWrapper, Seta } from './styledComponents';
 
 function App() {
   const [url, setUrl] = useState('')
-  const [textConverted, settextConverted] = useState('')
-
+  const [textConverted, setTextConverted] = useState('')
+  const [isConverting, setIsConverting] = useState(false)
 
   function onImageChange(e: any) {
     if (e.target.files && e.target.files[0]) {
@@ -111,27 +112,36 @@ function App() {
       return;
     }
 
+    setIsConverting(true);
+
     Tesseract.recognize(
       url,
       getLanguage(),
     ).then(({ data: { text } }) => {
-      settextConverted(text);
+      setTextConverted(text);
+      setIsConverting(false);
     })
   }
 
   return (
     <div className="App">
     <div className='div1'>
-      <input type="file" onChange={onImageChange} />
+      <input type="file" accept="image/*" onChange={onImageChange} />
       <br></br>
       <div className='div-url'>{url && (
         <img className="fixed-size-img" src={url} alt="image" />
       )}</div>
     </div>
     <div className='div2'>
-      <BsArrowRight size='50' className='arrow arrow-right' />
-      <BsFillArrowDownSquareFill size='50' className='arrow arrow-down' onClick={event => convertToText()} />
-      <button type='submit' className="button-convert" onClick={event => convertToText()}>Converter</button>
+        {isConverting ? (
+          <AiOutlineLoading size='50' className='loading-icon'/>
+        ) : (
+          <>
+          <BsArrowRight size='50' className='arrow arrow-right' />
+          <BsFillArrowDownSquareFill size='50' className='arrow arrow-down' onClick={event => convertToText()} />
+          </>)}
+
+      <button type='submit' className="button-convert" onClick={event => convertToText()}>{isConverting ? 'Convertendo':'Converter'}</button>
     </div>
 
 
