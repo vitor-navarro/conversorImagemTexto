@@ -1,6 +1,8 @@
 import { BsArrowRight, BsFillArrowDownSquareFill } from 'react-icons/bs'
 import { AiOutlineLoading } from 'react-icons/ai'
 import { useState, useEffect } from 'react'
+import UtilityBar from './components/utiliyBar';
+
 import Tesseract from 'tesseract.js';
 import './App.css'
 import './styles.css'
@@ -131,6 +133,7 @@ function App() {
       <div className='div-url'>{url && (
         <img className="fixed-size-img" src={url} alt="image" />
       )}</div>
+      <UtilityBar set={setTextConverted}></UtilityBar>      
     </div>
     <div className='div2'>
         {isConverting ? (
@@ -147,7 +150,8 @@ function App() {
 
     <div className='div3'>
       <label className='label-titulo'>Texto:</label>
-      <textarea value={textConverted}></textarea>
+      <textarea value={textConverted} onChange={(event) => setTextConverted(event.target.value)}></textarea>
+      <UtilityBar set={setTextConverted}></UtilityBar>
     </div>
 </div>
 )}
