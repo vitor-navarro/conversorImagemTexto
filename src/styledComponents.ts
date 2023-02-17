@@ -1,42 +1,30 @@
-import { ArrowRight } from "phosphor-react";
-import styled from "styled-components";
+import styled from 'styled-components';
 
-export const Container = styled.div`
-  display: flex;
-  gap: 32px;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-`
+interface ButtonProps {
+  primary?: boolean;
+  secondary?: boolean;
+}
 
-export const Quadrado = styled.div`
-  width: 70vw;
-  height: 100vw;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-`
+const Button = styled.button<ButtonProps>`
+  padding: 8px 16px;
+  border: none;
+  border-radius: 4px;
+  font-size: 16px;
+  cursor: pointer;
 
-export const ActionWrapper = styled.div`
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-  align-items: center;
-  justify-content: center;
-  button {
-    border: 0;
-    padding: 8px 16px;
-    border-radius: 6px;
-    cursor: pointer;
-  }
-`
+  ${(props) =>
+    props.primary &&
+    `
+    background-color: blue;
+    color: white;
+  `}
 
-export const Seta = styled(ArrowRight).attrs(() => ({
-  size: 64
-}))`
-  @media(max-width: 768px) {
-    transform: rotate(90deg);
-  }
-`
+  ${(props) =>
+    props.secondary &&
+    `
+    background-color: gray;
+    color: white;
+  `}
+`;
+
+export default Button;

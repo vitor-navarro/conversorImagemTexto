@@ -6,8 +6,6 @@ import UtilityBar from './components/utiliyBar';
 import Tesseract from 'tesseract.js';
 import './App.css'
 import './styles.css'
-import { Container, Quadrado, ActionWrapper, Seta } from './styledComponents';
-
 
 function App() {
   const [url, setUrl] = useState('')
