@@ -133,7 +133,6 @@ function App() {
       <div className='div-url'>{url && (
         <img className="fixed-size-img" src={url} alt="image" />
       )}</div>
-      <UtilityBar set={setTextConverted}></UtilityBar>      
     </div>
     <div className='div2'>
         {isConverting ? (
@@ -151,7 +150,7 @@ function App() {
     <div className='div3'>
       <label className='label-titulo'>Texto:</label>
       <textarea value={textConverted} onChange={(event) => setTextConverted(event.target.value)}></textarea>
-      <UtilityBar set={setTextConverted}></UtilityBar>
+      <UtilityBar input = {textConverted} setInput={setTextConverted}></UtilityBar>
     </div>
 </div>
 )}
