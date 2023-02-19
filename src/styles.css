@@ -81,6 +81,7 @@ div textarea{
 }
 
 .popup p{
+  color: #20cd0f;
   margin: 0;
   padding: 10px;
 }
@@ -125,9 +126,11 @@ div textarea{
   .div1{
     width: 40vw;
   }
+
   .div2{
     width: 15vw;
   }
+
   .div3{
     width: 40vw;
   }
@@ -136,6 +139,7 @@ div textarea{
     width: 40vw;
     height: 40vh;
   }
+  
 }
 
 @media (max-width:768px){
@@ -143,6 +147,7 @@ div textarea{
     flex-direction: column;
     height: auto;
   }
+
   .div1,.div2,.div3{
     height: auto;
     width: auto;
@@ -152,9 +157,14 @@ div textarea{
     margin: 20px;
   }
 
-  div textarea{
-    height: 300px;
+  .div-url{
     width: 100%;
+    height: 300px;
+  }
+
+  div textarea{
+    width: 100%;
+    height: 300px;
     padding: 10px 5px;
   }
 
