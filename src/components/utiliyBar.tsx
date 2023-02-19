@@ -1,18 +1,23 @@
 import React from 'react';
 import {Button}  from '../styledComponents';
-import MessagePopup  from './PopUp';
 import { AiOutlineCloseCircle,AiOutlineDownload } from 'react-icons/ai';
 import { BiCopy } from 'react-icons/bi';
 
 interface UtilityBarProps {
     input: string;
     setInput: (text: string) => void;
+    setPopupActive: (active: boolean) => void;
+    popupActive: boolean;
   }
 
-function UtilityBar( { input, setInput } : UtilityBarProps){
+function UtilityBar( { input, setInput, setPopupActive,popupActive } : UtilityBarProps){
     
     function handleCopy() {
         navigator.clipboard.writeText(input);
+        setPopupActive(true)
+        setTimeout(() => {
+            setPopupActive(false)
+        }, 3000);
       }
     
     function downloadFile(){

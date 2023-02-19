@@ -1,5 +1,6 @@
 import { BsArrowRight, BsFillArrowDownSquareFill } from 'react-icons/bs'
 import { AiOutlineLoading } from 'react-icons/ai'
+import { FcCheckmark } from 'react-icons/fc'
 import { useState, useEffect } from 'react'
 import UtilityBar from './components/utiliyBar';
 import Tesseract from 'tesseract.js';
@@ -10,6 +11,7 @@ function App() {
   const [url, setUrl] = useState('')
   const [textConverted, setTextConverted] = useState('')
   const [isConverting, setIsConverting] = useState(false)
+  const [popupActive, setPopupActive] = useState(false)
 
   function onImageChange(e: any) {
     if (e.target.files && e.target.files[0]) {
@@ -147,13 +149,18 @@ function App() {
     <div className='div3'>
       <div className='inline-flex'>
         <label className='label-titulo'>Texto:</label>
-        <UtilityBar input = {textConverted} setInput={setTextConverted}></UtilityBar>
+        <UtilityBar input = {textConverted} setInput={setTextConverted} setPopupActive={setPopupActive} popupActive={popupActive} ></UtilityBar>
       </div>
       <textarea value={textConverted} onChange={(event) => setTextConverted(event.target.value)}></textarea>
     </div>
 
-    <div className="popup">
+    {popupActive && (
+      <div className="popup">
+        <FcCheckmark></FcCheckmark>
+        <p>texto copiado com sucesso</p>
       </div>
+    )}
+
 </div>
 )}
 
