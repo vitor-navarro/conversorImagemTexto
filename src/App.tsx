@@ -2,7 +2,6 @@ import { BsArrowRight, BsFillArrowDownSquareFill } from 'react-icons/bs'
 import { AiOutlineLoading } from 'react-icons/ai'
 import { useState, useEffect } from 'react'
 import UtilityBar from './components/utiliyBar';
-
 import Tesseract from 'tesseract.js';
 import './App.css'
 import './styles.css'
@@ -151,8 +150,10 @@ function App() {
         <UtilityBar input = {textConverted} setInput={setTextConverted}></UtilityBar>
       </div>
       <textarea value={textConverted} onChange={(event) => setTextConverted(event.target.value)}></textarea>
-
     </div>
+
+    <div className="popup">
+      </div>
 </div>
 )}
 

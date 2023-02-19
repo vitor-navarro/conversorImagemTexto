@@ -1,21 +1,19 @@
 import React from 'react';
-import ReactDom from 'react-dom';
-import Button  from '../styledComponents';
+import {Button}  from '../styledComponents';
+import MessagePopup  from './PopUp';
 import { AiOutlineCloseCircle,AiOutlineDownload } from 'react-icons/ai';
-import { RiDeleteBin2Line } from 'react-icons/ri';
-import { BsBackspace } from 'react-icons/bs';
 import { BiCopy } from 'react-icons/bi';
 
-interface UtilityBarProps{
+interface UtilityBarProps {
     input: string;
     setInput: (text: string) => void;
-}
+  }
 
 function UtilityBar( { input, setInput } : UtilityBarProps){
     
-    function handleCopy(){
+    function handleCopy() {
         navigator.clipboard.writeText(input);
-    }
+      }
     
     function downloadFile(){
         const text = input;
