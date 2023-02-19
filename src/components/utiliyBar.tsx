@@ -17,7 +17,7 @@ function UtilityBar( { input, setInput, setPopupActive,popupActive } : UtilityBa
         setPopupActive(true)
         setTimeout(() => {
             setPopupActive(false)
-        }, 3000);
+        }, 2000);
       }
     
     function downloadFile(){
