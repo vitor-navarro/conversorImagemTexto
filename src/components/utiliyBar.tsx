@@ -1,7 +1,10 @@
 import React from 'react';
 import ReactDom from 'react-dom';
 import Button  from '../styledComponents';
-
+import { AiOutlineCloseCircle,AiOutlineDownload } from 'react-icons/ai';
+import { RiDeleteBin2Line } from 'react-icons/ri';
+import { BsBackspace } from 'react-icons/bs';
+import { BiCopy } from 'react-icons/bi';
 
 interface UtilityBarProps{
     input: string;
@@ -30,9 +33,21 @@ function UtilityBar( { input, setInput } : UtilityBarProps){
 
     return(
         <div>
-            <button onClick={(event) => setInput('')}>limpar</button>
-            <button onClick={(event) => handleCopy()}>copiar</button>
-            <button onClick={(event) => downloadFile()}>download</button>
+            <Button onClick={(event) => setInput('')}>
+                <AiOutlineCloseCircle  size= '20px'>
+
+                </AiOutlineCloseCircle>
+            </Button>
+            <Button onClick={(event) => handleCopy()}>
+                <BiCopy size= '20px'>
+
+                </BiCopy>
+            </Button>
+            <Button onClick={(event) => downloadFile()}>
+                <AiOutlineDownload size='20px'>
+
+                </AiOutlineDownload>
+            </Button>
         </div>
     )
 }

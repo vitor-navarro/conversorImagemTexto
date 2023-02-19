@@ -146,9 +146,12 @@ function App() {
 
 
     <div className='div3'>
-      <label className='label-titulo'>Texto:</label>
+      <div className='inline-flex'>
+        <label className='label-titulo'>Texto:</label>
+        <UtilityBar input = {textConverted} setInput={setTextConverted}></UtilityBar>
+      </div>
       <textarea value={textConverted} onChange={(event) => setTextConverted(event.target.value)}></textarea>
-      <UtilityBar input = {textConverted} setInput={setTextConverted}></UtilityBar>
+
     </div>
 </div>
 )}
