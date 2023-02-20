@@ -109,7 +109,7 @@ div textarea{
     transform: rotate(0deg);
   }
   100% {
-    transform: rotate(360deg);
+    transform: rotate(360deg); 
   }
 }
 
@@ -145,9 +145,13 @@ div textarea{
 
 @media (max-width:768px){
   .popup{
-    background-color: #d2d2d2;
+    bottom: auto;
+    top: -100px;
     border-radius: 2px;
+    animation: appearsTopDown 0.5s forwards;
+    color: #009619;
   }
+
   .App{
     flex-direction: column;
     height: auto;
@@ -184,5 +188,14 @@ div textarea{
 
   .button-convert{
     display: none;
+  }
+
+  @keyframes appearsTopDown {
+    0% {
+      top: -100px;
+    }
+    100% {
+      top: 3%;
+    }
   }
 }

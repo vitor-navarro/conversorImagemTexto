@@ -126,6 +126,9 @@ function App() {
 
   return (
     <div className="App">
+      <div>
+        <header></header>
+      </div>
     <div className='div1'>
       <input type="file" accept="image/*" onChange={onImageChange} />
       <br></br>
