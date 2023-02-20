@@ -45,8 +45,8 @@
 }
   
 .div-url{
-  width: 50vh;
-  height: 50vh;
+  width: 70%;
+  height: 70%;
   border: solid white 1px;
   border-radius: 5px;
 }
@@ -134,6 +134,9 @@ div textarea{
 }
 
 @media (max-width:1180px){
+
+
+
   .header{
     text-align: center;
   }
@@ -161,17 +164,20 @@ div textarea{
   
 }
 
-@media (max-width:768px){
-  .header{
-    font-size: 16px;
-  }
-
+@media (max-width:900px){
   .popup{
+    background-color: #464646;
+    width: 70%;
+    border:none;
     bottom: auto;
     top: -100px;
     border-radius: 2px;
     animation: appearsTopDown 0.5s forwards;
     color: #009619;
+  }
+
+  .header{
+    font-size: 16px;
   }
 
   .divMae{
