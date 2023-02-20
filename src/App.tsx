@@ -125,10 +125,13 @@ function App() {
   }
 
   return (
+
     <div className="App">
-      <div>
-        <header></header>
+
+      <div className='header'>
+        <h1>Imagem &rArr; Texto</h1>
       </div>
+    <div className='divMae'>
     <div className='div1'>
       <input type="file" accept="image/*" onChange={onImageChange} />
       <br></br>
@@ -136,6 +139,7 @@ function App() {
         <img className="fixed-size-img" src={url} alt="image" />
       )}</div>
     </div>
+
     <div className='div2'>
         {isConverting ? (
           <AiOutlineLoading size='50' className='loading-icon'/>
@@ -147,7 +151,6 @@ function App() {
 
       <button type='submit' className="button-convert" onClick={event => convertToText()}>{isConverting ? 'Convertendo':'Converter'}</button>
     </div>
-
 
     <div className='div3'>
       <div className='inline-flex'>
@@ -163,7 +166,7 @@ function App() {
         <p>texto copiado com sucesso</p>
       </div>
     )}
-
+</div>
 </div>
 )}
 

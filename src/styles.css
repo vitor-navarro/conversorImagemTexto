@@ -1,12 +1,23 @@
-.App {
+.divMae {
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
   height: 70vh;
 }
+
+.header {
+  position: relative;
+  background-color: #242424;
+  color: whitesmoke;
+  font-size: 20px;
+  font-weight: bold;
+  padding: 0 10px;
+  text-align: left;
+}
   
 .div1, .div2, .div3 {
+  margin-top: 5vh;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -123,6 +134,13 @@ div textarea{
 }
 
 @media (max-width:1180px){
+  .header{
+    text-align: center;
+  }
+
+  .div1,.div2,.div3{
+    margin-top: 10vh;
+  }
 
   .div1{
     width: 40vw;
@@ -144,6 +162,10 @@ div textarea{
 }
 
 @media (max-width:768px){
+  .header{
+    font-size: 16px;
+  }
+
   .popup{
     bottom: auto;
     top: -100px;
@@ -152,7 +174,7 @@ div textarea{
     color: #009619;
   }
 
-  .App{
+  .divMae{
     flex-direction: column;
     height: auto;
   }
