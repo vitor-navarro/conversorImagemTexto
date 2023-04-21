@@ -103,7 +103,6 @@ function App() {
 
     const browserLanguage = navigator.language;
     const tesseractLanguage = languageMap[browserLanguage] || "eng";
-    console.log(tesseractLanguage)
     return tesseractLanguage
   }
 
